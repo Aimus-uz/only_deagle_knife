@@ -85,6 +85,8 @@ namespace deagle_only
                 return HookResult.Continue;
 
             Server.PrintToChatAll($" {ChatColors.Green}[Warmup]{ChatColors.Default} Round is {ChatColors.Red}DEAGLE ONLY");
+            Server.PrintToChatAll($" {ChatColors.Green}[Warmup]{ChatColors.Default} Round is {ChatColors.Red}DEAGLE ONLY");
+            Server.PrintToChatAll($" {ChatColors.Green}[Warmup]{ChatColors.Default} Round is {ChatColors.Red}DEAGLE ONLY");
             _warmupMessageSent = true;
             return HookResult.Continue;
         }
@@ -96,8 +98,10 @@ namespace deagle_only
 
             foreach (var player in Utilities.GetPlayers())
             {
-                if (player == null || !player.IsValid || !player.PawnIsAlive)
-                    continue;
+                var pawn = player.PlayerPawn?.Value;
+if (pawn == null || (LifeState_t)pawn.LifeState != LifeState_t.LIFE_ALIVE)
+    continue;
+
 
                 var weaponServices = player.PlayerPawn?.Value?.WeaponServices;
                 if (weaponServices?.MyWeapons == null)
@@ -133,15 +137,17 @@ namespace deagle_only
     if (player == null || !player.IsValid)
         return HookResult.Continue;
 
-    // 🔹 Amânăm execuția până când Pawn-ul este complet respawnat
     Server.NextFrame(() =>
     {
-        if (!player.PawnIsAlive || player.PlayerPawn?.Value == null)
+        var pawn = player.PlayerPawn?.Value;
+        if (pawn == null)
+            return;
+
+        if (!pawn.LifeState.Equals(LifeState_t.LIFE_ALIVE))
             return;
 
         RemoveAllWeapons(player);
 
-        // Dă armele din config
         foreach (var weapon in AllowedWeapons)
         {
             player.GiveNamedItem(weapon);
@@ -150,6 +156,7 @@ namespace deagle_only
 
     return HookResult.Continue;
 }
+
 
 
         private static void RemoveAllWeapons(CCSPlayerController player)
