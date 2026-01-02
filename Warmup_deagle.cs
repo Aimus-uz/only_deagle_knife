@@ -9,7 +9,7 @@ namespace deagle_only
     {
         public override string ModuleAuthor => "GSM-RO";
         public override string ModuleName => "Warmup_deagle";
-        public override string ModuleVersion => "1.0.1";
+        public override string ModuleVersion => "1.0.2";
         public override string ModuleDescription => "Warmup Deagle Only with config";
 
         private bool _warmupMessageSent = false;

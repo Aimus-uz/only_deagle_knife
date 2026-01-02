@@ -1,9 +1,0 @@
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\bin\Release\addons\counterstrikesharp\plugins\Warmup_deagle\config.cfg
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\bin\Release\addons\counterstrikesharp\plugins\Warmup_deagle\Warmup_deagle.deps.json
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\bin\Release\addons\counterstrikesharp\plugins\Warmup_deagle\Warmup_deagle.dll
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\obj\Debug\Warmup_deagle.csproj.AssemblyReference.cache
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\obj\Debug\Warmup_deagle.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\obj\Debug\Warmup_deagle.csproj.CoreCompileInputs.cache
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\obj\Debug\Warmup_deagle.dll
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\obj\Debug\refint\Warmup_deagle.dll
-C:\Users\MihaiGsm2003\Desktop\CS2\github\Warmup_deagle\Warmup_deagle\obj\Debug\ref\Warmup_deagle.dll
