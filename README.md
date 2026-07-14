@@ -1,55 +1,54 @@
-# Warmup_deagle 🔫
+# Deagle_only 🔫
 
-**Warmup_deagle** is a simple **Counter-Strike 2** plugin built with **CounterStrikeSharp** that enforces **Deagle Only** gameplay during the **warmup round**.
+**Deagle_only** (форк [Warmup_deagle](https://github.com/mihaigsm2003/Warmup_deagle)) — простой плагин для Counter-Strike 2 на базе **CounterStrikeSharp**, который принудительно ограничивает игроков только разрешённым оружием (по умолчанию — Desert Eagle и нож) **на протяжении всего матча**, а не только во время варма.
 
-The plugin is lightweight, automatic, and fully inactive once warmup ends.
+## ✨ Особенности
 
----
+- Работает весь матч (старт раунда, спавн, в реальном времени)
+- По умолчанию разрешено только **Desert Eagle + нож** — остальное оружие игнорируется сервером
+- Если игрок подберёт с земли любое другое оружие (AK, M4, AWP и т.д.) — оно автоматически удаляется в течение секунды, взять его нельзя
+- Список разрешённого оружия настраивается через `config.cfg`, без пересборки плагина
 
-## Features
+## 📋 Требования
 
-- 🔫 Deagle Only during warmup
-- 🤖 Works for **players and bots**
-- 🧹 Automatically removes any disallowed weapons
-- 💬 Chat message at round start: `[Warmup] Round is DEAGLE ONLY`
-- ✅ Allowed weapons are configurable via **config file**
+- Counter-Strike 2 сервер
+- [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp) >= 1.0.348
 
----
+## 🛠️ Установка
 
-## Requirements
-
-- Counter-Strike 2
-- CounterStrikeSharp `>= 1.0.348`
-
----
-
-## Installation
-
-1. Build or download the plugin `.dll`
-2. Place it in:
+1. Скачай последнюю версию из [Releases](../../releases)
+2. Помести файлы (`Warmup_deagle.dll`, `Warmup_deagle.deps.json`, `config.cfg`) в:
    ```
    csgo/addons/counterstrikesharp/plugins/Warmup_deagle/
    ```
-3. Restart the server! 
+   (название папки должно совпадать с именем `.dll` без расширения)
+3. Перезапусти сервер
+4. Проверь через консоль сервера:
+   ```
+   css_plugins list
+   ```
 
----
+## ⚙️ Настройка (config.cfg)
 
-## How it works
+Файл `config.cfg` создаётся автоматически при первом запуске, если его нет. Формат:
 
-- Detects warmup using **GameRules**
-- Only active when `WarmupPeriod == true`
-- On spawn: removes weapons and gives `weapon_deagle`
-- On tick: enforces Deagle only for players and bots
+```
+allowed_weapons = weapon_deagle, weapon_knife
+```
 
----
+Примеры:
 
-## Author
+- Только Deagle (даже нож нельзя):
+  ```
+  allowed_weapons = weapon_deagle
+  ```
+- Deagle + нож (по умолчанию):
+  ```
+  allowed_weapons = weapon_deagle, weapon_knife
+  ```
 
-- **GSM-RO** inspired from awp no scop plugin (https://github.com/phara1/awp_noscope)
+После изменения `config.cfg` перезапусти сервер (или выполни `css_plugins reload Warmup_deagle`, если поддерживается сборкой CounterStrikeSharp).
 
----
+## 🙏 Благодарности
 
-## License
-
-Open-source. Free to use and modify.
-
+Основано на [Warmup_deagle](https://github.com/mihaigsm2003/Warmup_deagle) от mihaigsm2003.
